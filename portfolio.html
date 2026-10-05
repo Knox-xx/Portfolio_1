@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Editor & Motion Designer | Portfolio</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Elegant Typography: Instrument Serif + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0c0d10',
+              card: '#13151b',
+              border: '#21242d',
+              accent: '#f59e0b', // Warm Amber Gold
+              accentLight: '#fde68a',
+            }
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0c0d10;
+      color: #e2e4e9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Hand-drawn marker sketch highlight inspired by Patryk Barnas */
+    .sketch-highlight {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .sketch-highlight::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      bottom: 2px;
+      height: 32%;
+      background: rgba(245, 158, 11, 0.22);
+      border-radius: 4px;
+      z-index: -1;
+      transform: rotate(-0.8deg);
+    }
+
+    /* Video Embed Containers */
+    .video-16-9 {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+    .video-16-9 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-9-16 {
+      position: relative;
+      padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.85rem;
+    }
+    .video-9-16 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-400 selection:text-black">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0c0d10]/85 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif italic text-2xl tracking-wide text-white hover:text-amber-400 transition">
+        Portfolio<span class="text-amber-400">.</span>
+      </a>
+      <nav class="flex gap-7 text-xs uppercase tracking-widest font-medium text-zinc-400">
+        <a href="#about" class="hover:text-amber-400 transition">About</a>
+        <a href="#showreel" class="hover:text-amber-400 transition">Showreel</a>
+        <a href="#work" class="hover:text-amber-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="about" class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
+      
+      <!-- Circular Photo with Glowing Ring -->
+      <div class="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-8">
+        <img 
+          src="./WhatsApp Image 2026-10-05 at 8.29.28 PM.jpeg" 
+          alt="Your Profile" 
+          class="w-full h-full rounded-full object-cover ring-2 ring-amber-400/40 p-1 shadow-2xl shadow-amber-500/10"
+        />
+        <!-- Active Status Indicator -->
+        <span class="absolute bottom-1 right-2 w-4 h-4 bg-emerald-500 border-2 border-[#0c0d10] rounded-full" title="Open to Work"></span>
+      </div>
+
+      <!-- College Student Status Pill -->
+      <div class="inline-flex items-center gap-2 py-1 px-3.5 mb-6 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-300 text-xs tracking-wider uppercase">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        College Student & Independent Video Editor
+      </div>
+
+      <!-- Elegant Editorial Headline -->
+      <h1 class="text-4xl sm:text-6xl font-serif text-white leading-[1.15] font-normal tracking-tight">
+        Hustling through frames, <br class="hidden sm:inline" />
+        crafting cuts that <span class="italic sketch-highlight text-amber-200">leave a mark.</span>
+      </h1>
+
+      <!-- Bio / Description -->
+      <p class="mt-6 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
+        Balancing college by day and grinding late-night timelines. I specialize heavily in 
+        <strong class="text-white font-medium">After Effects</strong> for tight syncs, kinetic motion, and stylized VFX, backed with clean grading and assembly in <strong class="text-white font-medium">DaVinci Resolve</strong> and asset preparation in <strong class="text-white font-medium">Photoshop</strong>.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#showreel" class="px-6 py-3 rounded-lg bg-amber-400 hover:bg-amber-300 text-black font-semibold text-sm transition shadow-lg shadow-amber-400/10">
+          Watch Showreel
+        </a>
+        <a href="#contact" class="px-6 py-3 rounded-lg border border-brand-border hover:border-zinc-500 text-zinc-200 font-medium text-sm transition">
+          Let’s Work Together
+        </a>
+      </div>
+    </section>
+
+    <!-- Pinned Showreel (YouTube Short Format) -->
+    <section id="showreel" class="max-w-4xl mx-auto px-6 py-12 border-t border-brand-border">
+      <div class="text-center mb-8">
+        <p class="text-xs uppercase tracking-widest text-amber-400 font-medium mb-1">Vertical Showcase</p>
+        <h2 class="text-3xl font-serif text-white">Showreel (Shorts Cut)</h2>
+        <p class="text-xs text-zinc-400 mt-2">A quick vertical preview of my best cuts, transitions, and pacing.</p>
+      </div>
+
+      <!-- Centered 9:16 Shorts Container -->
+      <div class="max-w-[320px] mx-auto">
+        <div class="video-9-16 shadow-2xl ring-1 ring-brand-border bg-black">
+          <!-- Replace src with your YouTube Short embed link: https://www.youtube.com/embed/VIDEO_ID -->
+          <iframe 
+            src="https://youtube.com/embed/meIHyNOSdIs" 
+            title="Vertical Showreel" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Projects (The Remaining 3 Videos) -->
+    <section id="work" class="max-w-6xl mx-auto px-6 py-16 border-t border-brand-border">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber-400 font-medium mb-1">Selected Work</p>
+          <h2 class="text-3xl font-serif text-white">Recent Edits</h2>
+        </div>
+        <p class="text-xs text-zinc-400 max-w-sm">Crafted with precision velocity curves, custom sound design, and impact frames.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project 1: AMV Edit #1 -->
+        <article class="bg-brand-card border border-brand-border hover:border-zinc-700 transition rounded-xl p-4 flex flex-col group">
+          <div class="video-16-9 mb-4 bg-black">
+            <!-- Swap with your AMV #1 embed URL -->
+            <iframe src="https://www.youtube.com/embed/w_4kvPcb0OY?si=-YHI68XIrV3aCLl9" title="AMV Cinematic Edit" allowfullscreen></iframe>
+          </div>
+          <span class="text-[11px] font-mono uppercase tracking-wider text-amber-400/90 mb-1">Gaming video edit</span>
+          <h3 class="text-base font-semibold text-white group-hover:text-amber-300 transition">Kinetic AMV // Velocity & Flow</h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            Multi-layered speed ramps, seamless whip transitions, audio beat-syncing, and frame-by-frame impact shakes.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800/80 text-amber-300 border border-amber-500/20 font-medium">After Effects</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">Photoshop</span>
+          </div>
+        </article>
+
+        <!-- Project 2: AMV Edit #2 -->
+        <article class="bg-brand-card border border-brand-border hover:border-zinc-700 transition rounded-xl p-4 flex flex-col group">
+          <div class="video-16-9 mb-4 bg-black">
+            <!-- Swap with your AMV #2 embed URL -->
+            <iframe src="https://www.youtube.com/embed/3kO50_tfoWs?si=2tlQ1IQNo5uPrq_s" title="AMV Cinematic Grade" allowfullscreen></iframe>
+          </div>
+          <span class="text-[11px] font-mono uppercase tracking-wider text-amber-400/90 mb-1">Movie Edit</span>
+          <h3 class="text-base font-semibold text-white group-hover:text-amber-300 transition">Trending edit // Seamless Pacing</h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            High-Energy & Dynamic.Pure motion, sharp sync, and unstoppable momentum.   
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800/80 text-amber-300 border border-amber-500/20 font-medium">After Effects</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800/80 text-amber-300 border border-amber-500/20 font-medium">DaVinci Resolve</span>
+          </div>
+        </article>
+
+        <!-- Project 3: Gaming Stream Edit -->
+<article class="bg-brand-card border border-brand-border hover:border-zinc-700 transition rounded-xl p-4 flex flex-col group md:col-span-2 lg:col-span-1">
+          <div class="video-16-9 mb-4 bg-black">
+            <!-- Swap with your Gaming edit embed URL -->
+            <iframe src="https://www.youtube.com/embed/S3qnQOqS0cc?si=YUF8b8i7jq9yozYU" title="Game Streaming Edit" allowfullscreen></iframe>
+          </div>
+          <span class="text-[11px] font-mono uppercase tracking-wider text-amber-400/90 mb-1">Gaming Stream Cut</span>
+          <h3 class="text-base font-semibold text-white group-hover:text-amber-300 transition">Stream Highlights & Meme Pacing</h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            High-retention comedic timing, sound effects, punch-ins, tracking subtitles, and dynamic chat overlays.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">After Effects</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800/80 text-amber-300 border border-amber-500/20 font-medium">DaVinci Resolve</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Core Tools & Specialization -->
+    <section class="max-w-4xl mx-auto px-6 py-16 border-t border-brand-border">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif text-white">The Toolkit</h2>
+        <p class="text-xs text-zinc-400 mt-1">Software I grind in daily for motion, grades, and cutdowns.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        
+        <!-- Primary Tool: After Effects -->
+        <div class="p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/30 text-left relative overflow-hidden">
+          <span class="absolute top-3 right-3 text-[9px] uppercase tracking-wider bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded">Primary Focus</span>
+          <h3 class="text-base font-semibold text-white">After Effects</h3>
+          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            Graph editor easing, motion tracking, masking, velocity curves, 3D null spaces, and kinetic text.
+          </p>
+        </div>
+
+        <!-- Tool 2: DaVinci Resolve -->
+        <div class="p-5 rounded-xl bg-brand-card border border-brand-border text-left">
+          <h3 class="text-base font-semibold text-white">DaVinci Resolve</h3>
+          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            Fast timeline cutting, audio ducking, color nodes, film look emulation, and crisp render exports.
+          </p>
+        </div>
+
+        <!-- Tool 3: Photoshop -->
+        <div class="p-5 rounded-xl bg-brand-card border border-brand-border text-left">
+          <h3 class="text-base font-semibold text-white">Adobe Photoshop</h3>
+          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            Character isolation, alpha mattes, custom textures, thumbnail manipulation, and overlay prep.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center border-t border-brand-border">
+      <h2 class="text-4xl font-serif text-white">Got footage? Let’s create.</h2>
+      <p class="mt-3 text-sm text-zinc-400 max-w-md mx-auto">
+        Available for AMVs, YouTube gaming edits, short-form retention cuts, and creative commissions.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center items-center gap-3">
+        <!-- 1. One-Click Copy Email Button -->
+        <button 
+          id="copy-email-btn"
+          type="button"
+          onclick="copyEmail()" 
+          class="px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black text-xs font-semibold uppercase tracking-wider transition flex items-center gap-2 cursor-pointer shadow-md">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span id="copy-btn-text">Copy Email</span>
+        </button>
+
+        <!-- 3. Web Gmail Direct Compose Link (Never Fails) -->
+        <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=knox8303@gmail.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-5 py-2.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-xs uppercase tracking-wider text-amber-300 font-semibold transition">
+          Open in Gmail
+        </a>
+
+        <!-- 4. Discord Tag -->
+        <div class="px-4 py-2.5 rounded-lg bg-brand-card border border-brand-border text-xs text-zinc-300 font-mono flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#5865F2]"></span>
+          Discord: <span class="text-white font-medium">knoxx_69</span>
+        </div>
+      </div>
+
+      <p class="mt-14 text-[11px] text-zinc-600 font-mono tracking-wider">
+        © 2026 • BUILT FOR PERFORMANCE & IMPACT
+      </p>
+    </section>
+  </main>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    const emailAddress = "knox8303@gmail.com";
+
+    function copyEmail() {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(emailAddress).then(showSuccess).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    }
+
+    function fallbackCopy() {
+      const textArea = document.createElement("textarea");
+      textArea.value = emailAddress;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showSuccess();
+      } catch (err) {
+        window.location.href = `mailto:${emailAddress}`;
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function showSuccess() {
+      const btnText = document.getElementById("copy-btn-text");
+      btnText.innerText = "knox8303@gmail.com Copied!";
+      btnText.classList.add("text-emerald-500");
+
+      setTimeout(() => {
+        btnText.innerText = "Copy Email";
+        btnText.classList.remove("text-emerald-500");
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
